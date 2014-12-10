@@ -3,5 +3,5 @@
 core/coffee_shops.py
 ~~~~~~
 
-:copyright: (c) 2014 by MyAPP
+:copyright: (c) 2014
 """

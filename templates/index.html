@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}" ng-app="myApp">
+<html lang="en" ng-app="myApp">
 <head>
-  
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+  <title ng-bind="title">App</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/static/dist/css/bower-component.css">
+  <link rel="stylesheet" href="/static/dist/css/style.css">
+
+  <base href="/" />
+</head>
+<body ng-controller="AppCtrl">
+
+  <header>
+    <h1>App</h1>
+  </header>
+
+  <div ng-view></div>
+
+  <footer>
+    <p>Footer</p>
+  </footer>
+
+  <script src="/static/dist/js/bower-component.js"></script>
+  <script src="/static/dist/js/app.js"></script>
 </body>
 </html>
