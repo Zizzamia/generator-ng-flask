@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-sass": "^1.2.4"
+  },
+  "author": "Leonardo Zizzamia",
+  "license": "MIT"
+}

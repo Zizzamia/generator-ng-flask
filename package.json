@@ -1,11 +1,26 @@
 {
-  "name": "app",
-  "version": "0.1.0",
-  "description": "",
-  "devDependencies": {
-    "gulp": "^3.8.7",
-    "gulp-sass": "^1.2.4"
+  "name": "generator-tasty-angular-flask",
+  "version": "0.0.1",
+  "description": "This generator is the scaffolding tool for generate by Yeoman a simple Flask app",
+  "keywords": [
+    "yeoman-generator",
+    "scaffold",
+    "angular",
+    "flask"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "yeoman-generator": "^0.17.3",
+    "chalk": "^0.5.1",
+    "wiredep": "^2.2.2",
+    "yosay": "^1.0.1"
   },
-  "author": "Leonardo Zizzamia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zizzamia/generator-tasty-angular-flask.git"
+  },
+  "author": [
+    "@zizzamia"
+  ],
   "license": "MIT"
 }
