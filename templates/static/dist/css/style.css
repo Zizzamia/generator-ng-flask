@@ -12,9 +12,21 @@ body {
   letter-spacing: normal;
   text-align: left; }
 
+.content {
+  margin: 20px auto 0;
+  padding: 15px 0 0 0;
+  width: 600px;
+  text-align: left; }
+
+footer {
+  border-top: 4px double #e7e7e7;
+  margin: 20px auto 0;
+  padding: 20px;
+  text-align: center;
+  width: 600px; }
+
 header {
-  margin: 0;
-  height: 47px;
-  background-color: #f7f7f7;
-  border-down: 1px solid #e7e7e7; }
+  width: 600px;
+  margin: 20px auto 20px;
+  text-align: center; }
 

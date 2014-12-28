@@ -6,7 +6,7 @@ angular.module('myApp', [
   'myApp.pages.home',
   'myApp.pages.about'
 ])
-.config(function ($locationProvider, $routeProvider) {
+.config(function ($interpolateProvider, $locationProvider, $routeProvider) {
   $routeProvider
   .when('/', {
     controller: 'HomeCtrl',
@@ -21,6 +21,10 @@ angular.module('myApp', [
   .otherwise({ redirectTo: '/' });
 
   $locationProvider.html5Mode(true);
+
+  // We need replace {{ }} with  [[ ]]
+  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.endSymbol(']]');
 })
 .run(function ($rootScope, $route) {
   $rootScope.$on('$routeChangeSuccess', function(currentRoute, previousRoute){

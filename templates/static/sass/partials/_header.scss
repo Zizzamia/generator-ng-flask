@@ -1,8 +1,7 @@
 @import "modules/colors";
 
 header {
-  margin: 0;
-  height: 47px;
-  background-color: $tint-header-bg;
-  border-down: 1px solid $tint-header-border;
+  width: 600px;
+  margin: 20px auto 20px;
+  text-align: center;
 }

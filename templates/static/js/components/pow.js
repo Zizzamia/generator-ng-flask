@@ -7,10 +7,34 @@
 angular.module('myApp.components.pow', [])
 .directive('pow', function () {
   return {
-    template: '<div></div>',
     restrict: 'E',
+    scope: {
+      base: '=',
+      exponent: '='
+    },
+    templateUrl: 'components/pow.html',
     link: function postLink(scope, element, attrs) {
-      element.text('this is the pow directive');
+      var calculatePow, powResult;
+
+      element.text(0);
+
+      calculatePow = function (base, exponent) {
+        if (base && exponent) {
+          powResult = Math.pow(base, exponent);
+          element.text(powResult);
+        }
+      };
+      
+      scope.$watch('base', function (newVal, oldVal) {
+        if (newVal !== oldVal) {
+          calculatePow(scope.base,scope.exponent )
+        }
+      });
+      scope.$watch('exponent', function (newVal, oldVal) {
+        if (newVal !== oldVal) {
+          calculatePow(scope.base,scope.exponent )
+        }
+      });
     }
   };
 });

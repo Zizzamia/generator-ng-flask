@@ -11,23 +11,28 @@
   <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/static/dist/css/style.css">
 
-  <base href="/" />
+  <base href="{{ url_root }}" />
 </head>
 <body>
 
   <header>
-    <h1>App</h1>
+    <h1>Pow app</h1>
   </header>
 
   <div ng-view></div>
 
   <footer>
-    <p>Footer</p>
+    <p>
+      A tasty web app with 
+      <a href="http://flask.pocoo.org/" target="_blank">Flask</a> and
+      <a href="http://angularjs.org/" target="_blank">AngularJS</a> by 
+      <a href="https://twitter.com/zizzamia" target="_blank">@zizzamia</a>
+    </p>
   </footer>
 
   <script src="/static/bower_components/angular/angular.min.js"></script>
   <script src="/static/bower_components/angular-route/angular-route.min.js"></script>
   <script src="/static/bower_components/ng-tasty/ng-tasty-tpls.min.js"></script>
-  <script src="/static/dist/js/my-app-v12-27-21-39-58.min.js"></script>
+  <script src="/static/dist/js/my-app-v12-28-0-34-52.min.js"></script>
 </body>
 </html>
