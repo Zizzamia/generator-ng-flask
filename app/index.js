@@ -41,19 +41,6 @@ var Generator = module.exports = function Generator(args, options) {
   }
 
   this.appPath = this.env.options.appPath;
-  
-
-  this.hookFor('angular:common', {
-    args: args
-  });
-
-  this.hookFor('angular:main', {
-    args: args
-  });
-
-  this.hookFor('angular:controller', {
-    args: args
-  });
 
   this.on('end', function () {
     var enabledComponents = [];
@@ -94,32 +81,11 @@ var Generator = module.exports = function Generator(args, options) {
 
     var jsExt = 'js';
 
-    this.invoke('karma:app', {
-      options: {
-        'skip-install': this.options['skip-install'],
-        'base-path': '../',
-        'travis': true,
-        'bower-components': enabledComponents,
-        'app-files': 'app/scripts/**/*.' + jsExt,
-        'test-files': [
-          'test/mock/**/*.' + jsExt,
-          'test/spec/**/*.' + jsExt
-        ].join(','),
-        'bower-components-path': 'bower_components'
-      }
-    });
-
     this.installDependencies({
       skipInstall: this.options['skip-install'],
       skipMessage: this.options['skip-message'],
       callback: this._injectDependencies.bind(this)
     });
-
-    if (this.env.options.ngRoute) {
-      this.invoke('angular:route', {
-        args: ['about']
-      });
-    }
   });
 
   this.pkg = require('../package.json');
