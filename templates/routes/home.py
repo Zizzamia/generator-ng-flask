@@ -5,7 +5,8 @@ routes/home.py
 
 :copyright: (c) 2014
 """
-from flask import Blueprint, render_template, request, send_from_directory
+from flask import (Blueprint, current_app, render_template,
+                   request, send_from_directory)
 
 home = Blueprint('home', __name__)
 
@@ -25,6 +26,7 @@ def file_path(path):
 @home.route('/sitemap.xml/')
 @home.route('/favicon.ico/')
 def static_from_root():
+  """Serves static resources."""
   return send_from_directory(current_app.static_folder, request.path[1:])
 
 

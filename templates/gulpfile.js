@@ -8,7 +8,5 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('static/sass/*.scss', function (event) {
-    gulp.run('sass');
-  });
+  gulp.watch('static/sass/**/*.scss', ['sass']);
 });

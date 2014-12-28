@@ -1,14 +1,5 @@
-# Compiled files
-*.pyc
-
 # OSX
 .DS_Store
-
-# Bower
-static/bower_components
-
-# Sass
-.sass-cache
 
 # Node
 node_modules
