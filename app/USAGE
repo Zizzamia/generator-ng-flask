@@ -1,0 +1,5 @@
+Description:
+  Yeoman generator to create a Flask/AngularJS project
+
+  This generator will create the basic file and structure
+  for a new Flask application

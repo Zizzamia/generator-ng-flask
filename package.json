@@ -1,13 +1,8 @@
 {
-  "name": "generator-tasty-angular-flask",
+  "name": "generator-ng-flask",
   "version": "0.0.1",
   "description": "This generator is the scaffolding tool for generate by Yeoman a simple Flask app",
-  "keywords": [
-    "yeoman-generator",
-    "scaffold",
-    "angular",
-    "flask"
-  ],
+  "keywords": [],
   "main": "index.js",
   "dependencies": {
     "yeoman-generator": "^0.17.3",
@@ -17,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zizzamia/generator-tasty-angular-flask.git"
+    "url": "https://github.com/Zizzamia/generator-ng-flask.git"
   },
   "author": [
     "@zizzamia"

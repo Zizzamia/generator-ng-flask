@@ -1,0 +1,9 @@
+@import "modules/colors";
+
+footer {
+  border-top: 4px double $tint-footer-border;
+  margin: 20px auto 0;
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+}
