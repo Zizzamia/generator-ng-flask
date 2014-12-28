@@ -1,1 +1,0 @@
-my-custom-component.js
