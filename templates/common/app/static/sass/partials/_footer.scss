@@ -1,9 +1,11 @@
 @import "modules/colors";
 
 footer {
-  border-top: 4px double $tint-footer-border;
-  margin: 20px auto 0;
-  padding: 20px;
+  margin: 10px 0;
   text-align: center;
-  width: 600px;
+
+  .footer-inner {
+    padding: 10px 0;
+    border-top: 4px double $tint-footer-border;
+  }
 }

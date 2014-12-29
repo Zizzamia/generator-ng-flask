@@ -8,33 +8,21 @@
   <title ng-bind="title"></title>
   <meta name="description" content="">
 
-  <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- bower:css -->
-  <!-- endbower -->
-  <link rel="stylesheet" href="/static/dist/css/style.css">
+  <link rel="stylesheet" href="/static/dist/css/<%= _.slugify(_.humanize(appname)) %>-v12-28.min.css">
 
   <base href="{{ url_root }}" />
 </head>
 <body>
 
-  <header>
-    <h1>Pow app</h1>
-  </header>
+  <header class="navbar navbar-static-top" ng-include="template.header"></header>
+  
+  <div class="container content" ng-view></div>
 
-  <div ng-view></div>
-
-  <footer>
-    <p>
-      A tasty web app with 
-      <a href="http://flask.pocoo.org/" target="_blank">Flask</a> and
-      <a href="http://angularjs.org/" target="_blank">AngularJS</a> by 
-      <a href="https://twitter.com/zizzamia" target="_blank">@zizzamia</a>
-    </p>
-  </footer>
+  <footer ng-include="template.footer"></footer>
 
   <script src="/static/bower_components/angular/angular.min.js"></script>
   <script src="/static/bower_components/angular-route/angular-route.min.js"></script>
   <script src="/static/bower_components/ng-tasty/ng-tasty-tpls.min.js"></script>
-  <script src="/static/dist/js/my-app-v12-28-0-34-52.min.js"></script>
+  <script src="/static/dist/js/<%= _.slugify(_.humanize(appname)) %>-v12-28.min.js"></script>
 </body>
 </html>

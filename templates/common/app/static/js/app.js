@@ -37,4 +37,8 @@ angular.module('<%= scriptAppName %>', [
     //Change page title, based on Route information
     $rootScope.title = $route.current.title;
   });
+  $rootScope.template = {
+    'header': 'partials/header.html',
+    'footer': 'partials/footer.html'
+  };
 });

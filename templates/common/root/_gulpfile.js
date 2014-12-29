@@ -13,7 +13,35 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
-gulp.task('build', ['html2js', 'clean-js', 'build-js', 'sass']);
+gulp.task('build', [
+  'html2js',
+  'clean-js',
+  'build-js',
+  'clean-css',
+  'sass',
+  'build-css'
+]);
+
+gulp.task('build-css', function() {
+  var date = new Date;
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  var myVersionNumber = month + '-' + day + '-' + hour + '-' + minutes + '-' + seconds;
+
+  gulp.src(['templates/index.html'])
+    .pipe(replace(/<%= _.slugify(_.humanize(appname)) %>-v[A-Z0-9.-]+?.min.css/, '<%= _.slugify(_.humanize(appname)) %>-v' + myVersionNumber + '.min.css'))
+    .pipe(gulp.dest('templates'));
+
+  return gulp.src(['static/bower_components/bootstrap/dist/css/bootstrap.min.css',
+    'static/css/style.css'])
+    // Bundle to a single file
+    .pipe(concat('<%= _.slugify(_.humanize(appname)) %>-v' + myVersionNumber + '.min.css'))
+    // Output it to our dist folder
+    .pipe(gulp.dest('static/dist/css'));
+});
 
 gulp.task('build-js', function() {
   var date = new Date;
@@ -38,6 +66,12 @@ gulp.task('build-js', function() {
   gulp.src(['templates/index.html'])
     .pipe(replace(/<%= _.slugify(_.humanize(appname)) %>-v[A-Z0-9.-]+?.min.js/, '<%= _.slugify(_.humanize(appname)) %>-v' + myVersionNumber + '.min.js'))
     .pipe(gulp.dest('templates'));
+});
+
+gulp.task('clean-css', function () {
+  return del([
+    'static/dist/css/<%= _.slugify(_.humanize(appname)) %>*'
+  ]);
 });
 
 gulp.task('clean-js', function () {
@@ -65,13 +99,14 @@ gulp.task('jshint', function() {
 gulp.task('sass', function() {
   return gulp.src('static/sass/style.scss')
     .pipe(sass())
-    .pipe(gulp.dest('static/dist/css'));
+    .pipe(gulp.dest('static/css'));
 });
 
 gulp.task('watch', function() {
   gulp.watch(['static/js/**/*.js', 
     'static/dist/template/*.js'], ['clean-js', 'jshint', 'build-js']);
   gulp.watch('static/sass/**/*.scss', ['sass']);
+  gulp.watch('static/css/style.css', ['clean-css', 'build-css']);
   gulp.watch(['templates/components/*.html',
     'templates/pages/*.html'], ['html2js']);
 });
