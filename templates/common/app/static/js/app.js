@@ -9,6 +9,8 @@ angular.module('<%= scriptAppName %>', [
   'ngTasty',
   '<%= scriptAppName %>.components.api',
   '<%= scriptAppName %>.components.pow',
+  '<%= scriptAppName %>.components.header',
+  '<%= scriptAppName %>.components.footer',
   '<%= scriptAppName %>.pages.home',
   '<%= scriptAppName %>.pages.coffeeShops'
 ])
@@ -37,8 +39,4 @@ angular.module('<%= scriptAppName %>', [
     //Change page title, based on Route information
     $rootScope.title = $route.current.title;
   });
-  $rootScope.template = {
-    'header': 'partials/header.html',
-    'footer': 'partials/footer.html'
-  };
 });

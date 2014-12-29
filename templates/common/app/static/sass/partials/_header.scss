@@ -4,4 +4,9 @@ header {
   margin-bottom: 0;
   background-color: $tint-header-bg;
   border-bottom: 1px solid $tint-header-border;
+
+  .nav > li.active > a {
+    text-decoration: none;
+    background-color: #eee;
+  }
 }

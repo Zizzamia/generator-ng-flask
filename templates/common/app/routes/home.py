@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-routes/home.py
+routes.home.py
 ~~~~~~
 
 :copyright: (c) 2014
@@ -11,6 +11,7 @@ from flask import (Blueprint, current_app, render_template,
 home = Blueprint('home', __name__)
 
 @home.route('/')
+@home.route('/coffee-shops')
 def index():
   """Redirect to the AngularJS entry."""
   return render_template('index.html')

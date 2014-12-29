@@ -1,8 +1,14 @@
 {
   "name": "generator-ng-flask",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "This generator is the scaffolding tool for generate by Yeoman a simple Flask app",
-  "keywords": [],
+  "keywords": [
+    "yeoman-generator",
+    "scaffold",
+    "angular",
+    "flask",
+    "ngtasty"
+  ],
   "main": "index.js",
   "dependencies": {
     "yeoman-generator": "^0.17.3",

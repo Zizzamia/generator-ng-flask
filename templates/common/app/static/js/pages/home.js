@@ -8,6 +8,6 @@
  * Controller of <%= scriptAppName %>
  */
 angular.module('<%= scriptAppName %>.pages.home', [])
-.controller('HomeCtrl', function() {
-
+.controller('HomeCtrl', function($rootScope) {
+  $rootScope.activePage = 'home';
 });

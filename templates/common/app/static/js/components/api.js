@@ -7,6 +7,16 @@
  *
  */
 angular.module('<%= scriptAppName %>.components.api', [])
-.factory('api', function() {
-  return {}
+.factory('api', function(coffeeShop) {
+  return {
+    'coffeeShop': coffeeShop
+  };
+})
+.factory('coffeeShop', function($http) {
+  var list = function (params) {
+    return $http.get('/api/coffee-shop/list.json', { 'params': params });
+  };
+  return {
+    'list': list
+  };
 });

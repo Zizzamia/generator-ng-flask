@@ -14,7 +14,7 @@ npm install generator-ng-flask
 
 Scaffolding out your tasty AngularJS/Flask app
 ```
-yo ng-flask
+yo ng-flask nameApp
 ```
 
 And now you can start the Quick start of you new Flask app from the README generated.

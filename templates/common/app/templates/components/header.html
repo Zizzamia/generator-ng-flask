@@ -1,0 +1,17 @@
+<header class="navbar navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand"><%= appname %></a>
+    </div>
+    <nav class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ng-class="{active: activePage=='home'}">
+          <a href="/">Home</a>
+        </li>
+        <li ng-class="{active: activePage=='coffee-shops'}">
+          <a href="/coffee-shops">Coffee Shops</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
