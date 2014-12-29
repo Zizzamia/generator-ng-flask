@@ -174,6 +174,8 @@ Generator.prototype.packageFlaskFiles = function packageFiles() {
 Generator.prototype.packageJsFiles = function packageFiles() {
   this.template('app/static/js/app.js', 'static/js/app.js');
   this.template('app/static/js/components/api.js', 'static/js/components/api.js');
+  this.template('app/static/js/components/footer.js', 'static/js/components/footer.js');
+  this.template('app/static/js/components/header.js', 'static/js/components/header.js');
   this.template('app/static/js/components/pow.js', 'static/js/components/pow.js');
   this.template('app/static/js/pages/coffee-shops.js', 'static/js/pages/coffee-shops.js');
   this.template('app/static/js/pages/home.js', 'static/js/pages/home.js');
@@ -190,7 +192,8 @@ Generator.prototype.packageCssFiles = function packageFiles() {
 Generator.prototype.packageTemplatesFiles = function packageFiles() {
   this.template('app/templates/index.html', 'templates/index.html');
   this.template('app/templates/components/pow.html', 'templates/components/pow.html');
+  this.template('app/templates/components/footer.html', 'templates/components/footer.html');
+  this.template('app/templates/components/header.html', 'templates/components/header.html');
+  this.template('app/templates/pages/coffee-shops.html', 'templates/pages/coffee-shops.html');
   this.template('app/templates/pages/home.html', 'templates/pages/home.html');
-  this.template('app/templates/partials/footer.html', 'templates/partials/footer.html');
-  this.template('app/templates/partials/header.html', 'templates/partials/header.html');
 };
