@@ -1,3 +1,9 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name <%= scriptAppName %>
+ */
 angular.module('<%= scriptAppName %>', [
   'ngRoute',
   'ngTasty',

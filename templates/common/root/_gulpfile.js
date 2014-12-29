@@ -13,6 +13,8 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
+gulp.task('build', ['html2js', 'clean-js', 'build-js', 'sass']);
+
 gulp.task('build-js', function() {
   var date = new Date;
   var month = date.getMonth() + 1;
@@ -40,7 +42,7 @@ gulp.task('build-js', function() {
 
 gulp.task('clean-js', function () {
   return del([
-    'static/dist/js/my-app*'
+    'static/dist/js/<%= _.slugify(_.humanize(appname)) %>*'
   ]);
 });
 
@@ -67,7 +69,8 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('static/js/**/*.js', ['clean-js', 'jshint', 'build-js']);
+  gulp.watch(['static/js/**/*.js', 
+    'static/dist/template/*.js'], ['clean-js', 'jshint', 'build-js']);
   gulp.watch('static/sass/**/*.scss', ['sass']);
   gulp.watch(['templates/components/*.html',
     'templates/pages/*.html'], ['html2js']);

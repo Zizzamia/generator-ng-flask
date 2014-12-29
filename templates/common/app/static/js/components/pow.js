@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @ngdoc directive
  * @name <%= scriptAppName %>.component.pow
@@ -8,6 +10,7 @@ angular.module('<%= scriptAppName %>.components.pow', [])
 .directive('pow', function () {
   return {
     restrict: 'E',
+    replace: true,
     scope: {
       base: '=',
       exponent: '='
