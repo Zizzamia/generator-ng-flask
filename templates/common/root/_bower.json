@@ -1,11 +1,10 @@
 {
-  "name": "<%= _.slugify(_.humanize(appname)) %>",
+  "name": "<%= appname %>",
   "version": "0.1.0",
   "devDependencies": {
     "angular": "1.3.8",
     "angular-route": "1.3.8",
     "bootstrap": "~3.3.1",
     "ng-tasty": "~0.4.4"
-  }<% if (appPath) { %>,
-  "appPath": "<%= appPath %>"<% } %>
+  }
 }

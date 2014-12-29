@@ -1,6 +1,6 @@
 {
   "name": "generator-ng-flask",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This generator is the scaffolding tool for generate by Yeoman a simple Flask app",
   "keywords": [],
   "main": "index.js",
@@ -14,8 +14,10 @@
     "type": "git",
     "url": "https://github.com/Zizzamia/generator-ng-flask.git"
   },
-  "author": [
-    "@zizzamia"
-  ],
+  "bugs": {
+    "url": "https://github.com/Zizzamia/generator-ng-flask/issues"
+  },
+  "homepage": "https://github.com/Zizzamia/generator-ng-flask",
+  "author": "",
   "license": "MIT"
 }
