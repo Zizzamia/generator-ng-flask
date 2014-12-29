@@ -12,15 +12,16 @@ var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var runSequence = require('run-sequence');
 
-gulp.task('build', [
-  'html2js',
-  'clean-js',
-  'build-js',
-  'clean-css',
-  'sass',
-  'build-css'
-]);
+gulp.task('build', function () {
+  runSequence('sass',
+              'clean-css',
+              'build-css',
+              'html2js',
+              'clean-js',
+              'build-js');
+});
 
 gulp.task('build-css', function() {
   var date = new Date;
@@ -103,10 +104,12 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['static/js/**/*.js', 
-    'static/dist/template/*.js'], ['clean-js', 'jshint', 'build-js']);
+  gulp.watch(['static/js/**/*.js', 'static/dist/template/*.js'], function () {
+    runSequence('clean-js', 'jshint', 'build-js');
+  });
   gulp.watch('static/sass/**/*.scss', ['sass']);
-  gulp.watch('static/css/style.css', ['clean-css', 'build-css']);
-  gulp.watch(['templates/components/*.html',
-    'templates/pages/*.html'], ['html2js']);
+  gulp.watch('static/css/style.css', function () {
+    runSequence('clean-css', 'build-css');
+  });
+  gulp.watch(['templates/components/*.html', 'templates/pages/*.html'], ['html2js']);
 });

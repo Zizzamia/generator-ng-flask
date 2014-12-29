@@ -16,3 +16,5 @@ Scaffolding out your tasty AngularJS/Flask app
 ```
 yo ng-flask
 ```
+
+And now you can start the Quick start of you new Flask app from the README generated.

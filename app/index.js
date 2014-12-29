@@ -191,4 +191,6 @@ Generator.prototype.packageTemplatesFiles = function packageFiles() {
   this.template('app/templates/index.html', 'templates/index.html');
   this.template('app/templates/components/pow.html', 'templates/components/pow.html');
   this.template('app/templates/pages/home.html', 'templates/pages/home.html');
+  this.template('app/templates/partials/footer.html', 'templates/partials/footer.html');
+  this.template('app/templates/partials/header.html', 'templates/partials/header.html');
 };
