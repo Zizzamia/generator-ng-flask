@@ -1,7 +1,5 @@
-flask-angularjs-scaffold
+<%= _.slugify(_.humanize(appname)) %>
 ========================
-
-A scaffold for AngularJS and Flask
 
 ## Quick start
 Just for running a new app let's follow these 4 steps.

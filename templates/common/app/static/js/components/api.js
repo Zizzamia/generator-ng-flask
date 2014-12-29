@@ -1,10 +1,10 @@
 /**
  * @ngdoc service
- * @name myApp.components.api
+ * @name <%= scriptAppName %>.components.api
  * @description
  *
  */
-angular.module('myApp.components.api', [])
+angular.module('<%= scriptAppName %>.components.api', [])
 .factory('api', function() {
   return {}
 });

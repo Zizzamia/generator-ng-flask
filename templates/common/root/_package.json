@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "<%= _.slugify(appname) %>",
   "version": "0.1.0",
-  "description": "",
+  "dependencies": {},
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.10",
@@ -15,6 +15,7 @@
     "gulp-sourcemaps": "^1.2.8",
     "gulp-uglify": "^1.0.2"
   },
-  "author": "Leonardo Zizzamia",
-  "license": "MIT"
+  "engines": {
+    "node": ">=0.10.0"
+  }
 }

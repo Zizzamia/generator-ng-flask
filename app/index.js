@@ -224,8 +224,45 @@ Generator.prototype.createIndexHtml = function createIndexHtml() {
 Generator.prototype.packageFiles = function packageFiles() {
   this.template('root/_bower.json', 'bower.json');
   this.template('root/_bowerrc', '.bowerrc');
+  this.template('root/_jshintrc', '.jshintrc');
   this.template('root/_package.json', 'package.json');
   this.template('root/_gulpfile.js', 'gulpfile.js');
+  this.template('root/LICENSE', 'LICENSE');
+  this.template('root/README.md', 'README.md');
+  this.template('root/REQUIREMENTS.txt', 'REQUIREMENTS.txt');
+};
+
+Generator.prototype.packageFlaskFiles = function packageFiles() {
+  this.template('app/__init__.py', '__init__.py');
+  this.template('app/app.py', 'app.py');
+  this.template('app/config.py', 'config.py');
+  this.template('app/core/__init__.py', 'core/__init__.py');
+  this.template('app/core/coffee_shops.py', 'core/coffee_shops.py');
+  this.template('app/routes/__init__.py', 'routes/__init__.py');
+  this.template('app/routes/api.py', 'routes/api.py');
+  this.template('app/routes/home.py', 'routes/home.py');
+};
+
+Generator.prototype.packageJsFiles = function packageFiles() {
+  this.template('app/static/js/app.js', 'static/js/app.js');
+  this.template('app/static/js/components/api.js', 'static/js/components/api.js');
+  this.template('app/static/js/components/pow.js', 'static/js/components/pow.js');
+  this.template('app/static/js/pages/coffee-shops.js', 'static/js/pages/coffee-shops.js');
+  this.template('app/static/js/pages/home.js', 'static/js/pages/home.js');
+};
+
+Generator.prototype.packageCssFiles = function packageFiles() {
+  this.template('app/static/sass/style.scss', 'static/sass/style.scss');
+  this.template('app/static/sass/modules/_colors.scss', 'static/sass/modules/_colors.scss');
+  this.template('app/static/sass/pages/_home.scss', 'static/sass/pages/_home.scss');
+  this.template('app/static/sass/partials/_footer.scss', 'static/sass/partials/_footer.scss');
+  this.template('app/static/sass/partials/_header.scss', 'static/sass/partials/_header.scss');
+};
+
+Generator.prototype.packageTemplatesFiles = function packageFiles() {
+  this.template('app/templates/index.html', 'templates/index.html');
+  this.template('app/templates/components/pow.html', 'templates/components/pow.html');
+  this.template('app/templates/pages/home.html', 'templates/pages/home.html');
 };
 
 Generator.prototype._injectDependencies = function _injectDependencies() {

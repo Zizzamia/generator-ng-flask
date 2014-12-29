@@ -1,4 +1,4 @@
-angular.module('myApp.pages.home', [])
+angular.module('<%= scriptAppName %>.pages.home', [])
 .controller('HomeCtrl', function() {
 
 });

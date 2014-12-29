@@ -1,21 +1,11 @@
 {
-  "name": "flask-angularjs-scaffold",
+  "name": "<%= _.slugify(_.humanize(appname)) %>",
   "version": "0.1.0",
-  "homepage": "https://github.com/Zizzamia/flask-angularjs-scaffold",
-  "authors": [
-    "Leonardo Zizzamia <leonardo.zizzamia@gmail.com>"
-  ],
-  "description": "A scaffold for AngularJS and Flask",
   "devDependencies": {
-    "angular": "~1.3.8",
-    "angular-route": "~1.3.8",
+    "angular": "1.3.8",
+    "angular-route": "1.3.8",
     "bootstrap": "~3.3.1",
     "ng-tasty": "~0.4.4"
-  },
-  "keywords": [
-    "flask",
-    "angularjs",
-    "scaffold"
-  ],
-  "license": "MIT"
+  }<% if (appPath) { %>,
+  "appPath": "<%= appPath %>"<% } %>
 }

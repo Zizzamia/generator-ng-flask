@@ -1,22 +1,22 @@
-angular.module('myApp', [
+angular.module('<%= scriptAppName %>', [
   'ngRoute',
   'ngTasty',
-  'myApp.components.api',
-  'myApp.components.pow',
-  'myApp.pages.home',
-  'myApp.pages.about'
+  '<%= scriptAppName %>.components.api',
+  '<%= scriptAppName %>.components.pow',
+  '<%= scriptAppName %>.pages.home',
+  '<%= scriptAppName %>.pages.coffeeShops'
 ])
 .config(function ($interpolateProvider, $locationProvider, $routeProvider) {
   $routeProvider
   .when('/', {
     controller: 'HomeCtrl',
     templateUrl: 'pages/home.html',
-    title: 'myApp'
+    title: '<%= scriptAppName %>'
   })
-  .when('/about', {
-    controller: 'AboutCtrl',
-    templateUrl: 'pages/about.html',
-    title: 'myApp - About'
+  .when('/coffee-shops', {
+    controller: 'CoffeeShopsCtrl',
+    templateUrl: 'pages/coffee-shops.html',
+    title: '<%= scriptAppName %> - coffeeShops'
   })
   .otherwise({ redirectTo: '/' });
 

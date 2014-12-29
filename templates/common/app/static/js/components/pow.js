@@ -1,10 +1,10 @@
 /**
  * @ngdoc directive
- * @name myApp.component.pow
+ * @name <%= scriptAppName %>.component.pow
  * @description
  * # pow
  */
-angular.module('myApp.components.pow', [])
+angular.module('<%= scriptAppName %>.components.pow', [])
 .directive('pow', function () {
   return {
     restrict: 'E',

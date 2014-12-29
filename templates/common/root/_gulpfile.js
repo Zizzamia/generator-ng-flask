@@ -1,3 +1,6 @@
+// Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
+'use strict';
+
 var gulp = require('gulp');
 var concat = require("gulp-concat");
 var del = require('del');
@@ -22,7 +25,7 @@ gulp.task('build-js', function() {
   gulp.src(['static/dist/template/template.html.js', 
     'static/js/**/*.js'])
     .pipe(sourcemaps.init())
-    .pipe(concat('my-app-v' + myVersionNumber + '.js'))
+    .pipe(concat('<%= _.slugify(_.humanize(appname)) %>-v' + myVersionNumber + '.js'))
     .pipe(ngAnnotate())
     //.pipe(gulp.dest('static/dist/js'))
     .pipe(uglify())
@@ -31,7 +34,7 @@ gulp.task('build-js', function() {
     .pipe(gulp.dest('static/dist/js'));
 
   gulp.src(['templates/index.html'])
-    .pipe(replace(/my-app-v[A-Z0-9.-]+?.min.js/, 'my-app-v' + myVersionNumber + '.min.js'))
+    .pipe(replace(/<%= _.slugify(_.humanize(appname)) %>-v[A-Z0-9.-]+?.min.js/, '<%= _.slugify(_.humanize(appname)) %>-v' + myVersionNumber + '.min.js'))
     .pipe(gulp.dest('templates'));
 });
 
