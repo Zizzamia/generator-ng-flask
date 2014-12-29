@@ -1,4 +1,4 @@
-# generator-tasty-angular-flask [![NPM version](https://badge.fury.io/js/generator-ng-flask.svg)](https://www.npmjs.org/package/generator-ng-flask) [![NPM Downloads](http://img.shields.io/npm/dm/generator-ng-flask.svg)](https://www.npmjs.org/package/generator-ng-flask)
+# generator-ng-flask [![NPM version](https://badge.fury.io/js/generator-ng-flask.svg)](https://www.npmjs.org/package/generator-ng-flask) [![NPM Downloads](http://img.shields.io/npm/dm/generator-ng-flask.svg)](https://www.npmjs.org/package/generator-ng-flask)
 > This generator is the scaffolding tool for generate by Yeoman a simple Flask app
 
 ## Quick start
