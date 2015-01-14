@@ -23,7 +23,7 @@ gulp.task('build', function () {
               'build-js');
 });
 
-gulp.task('build-css', function() {
+gulp.task('build-css', function () {
   var date = new Date;
   var month = date.getMonth() + 1;
   var day = date.getDate();
@@ -44,7 +44,7 @@ gulp.task('build-css', function() {
     .pipe(gulp.dest('static/dist/css'));
 });
 
-gulp.task('build-js', function() {
+gulp.task('build-js', function () {
   var date = new Date;
   var month = date.getMonth() + 1;
   var day = date.getDate();
@@ -81,7 +81,7 @@ gulp.task('clean-js', function () {
   ]);
 });
 
-gulp.task('html2js', function() {
+gulp.task('html2js', function () {
   return gulp.src(['templates/components/*.html',
     'templates/pages/*.html'])
     .pipe(html2js({
@@ -91,19 +91,19 @@ gulp.task('html2js', function() {
     .pipe(gulp.dest('static/dist/template'))
 });
 
-gulp.task('jshint', function() {
+gulp.task('jshint', function () {
   return gulp.src('static/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   return gulp.src('static/sass/style.scss')
     .pipe(sass())
     .pipe(gulp.dest('static/css'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   gulp.watch(['static/js/**/*.js', 'static/dist/template/*.js'], function () {
     runSequence('clean-js', 'jshint', 'build-js');
   });

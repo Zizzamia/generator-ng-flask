@@ -12,6 +12,11 @@ Installing generator-ng-flask
 npm install generator-ng-flask
 ```
 
+Create new directory app and run Yeoman generator inside
+```
+mkdir name-app && cd name-app
+```
+
 Scaffolding out your tasty AngularJS/Flask app
 ```
 yo ng-flask nameApp
