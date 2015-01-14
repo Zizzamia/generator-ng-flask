@@ -25,5 +25,12 @@
   },
   "homepage": "https://github.com/Zizzamia/generator-ng-flask",
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "readme": "# generator-tasty-angular-flask [![NPM version](https://badge.fury.io/js/generator-ng-flask.svg)](https://www.npmjs.org/package/generator-ng-flask) [![NPM Downloads](http://img.shields.io/npm/dm/generator-ng-flask.svg)](https://www.npmjs.org/package/generator-ng-flask)\n> This generator is the scaffolding tool for generate by Yeoman a simple Flask app\n\n## Quick start\nInstalling Yeoman\n```\nnpm install -g yo\n```\n\nInstalling generator-ng-flask\n```\nnpm install generator-ng-flask\n```\n\nScaffolding out your tasty AngularJS/Flask app\n```\nyo ng-flask nameApp\n```\n\nAnd now you can start the Quick start of you new Flask app from the README generated.\n",
+  "readmeFilename": "README.md",
+  "gitHead": "ab283266d1c44889477c44c96e0ee8353dc5710c",
+  "_id": "generator-ng-flask@0.1.2",
+  "scripts": {},
+  "_shasum": "13c6e0f06be6cca674cbd1764ea8276598c56e7b",
+  "_from": "generator-ng-flask@"
 }

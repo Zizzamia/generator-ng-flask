@@ -45,7 +45,9 @@ var Generator = module.exports = function Generator(args, options) {
       'angular-mocks/angular-mocks.js'
     ].concat(enabledComponents).join(',');
 
-    var jsExt = 'js';
+    this.installDependencies({
+      callback: this._injectDependencies.bind(this)
+    });
   });
 
   this.pkg = require('../package.json');
@@ -190,10 +192,40 @@ Generator.prototype.packageCssFiles = function packageFiles() {
 };
 
 Generator.prototype.packageTemplatesFiles = function packageFiles() {
-  this.template('app/templates/index.html', 'templates/index.html');
   this.template('app/templates/components/pow.html', 'templates/components/pow.html');
   this.template('app/templates/components/footer.html', 'templates/components/footer.html');
   this.template('app/templates/components/header.html', 'templates/components/header.html');
   this.template('app/templates/pages/coffee-shops.html', 'templates/pages/coffee-shops.html');
   this.template('app/templates/pages/home.html', 'templates/pages/home.html');
+};
+
+Generator.prototype.appJs = function appJs() {
+  this.indexFile = this.appendFiles({
+    html: this.indexFile,
+    fileType: 'js',
+    optimizedPath: 'scripts/scripts.js',
+    sourceFileList: ['scripts/app.js', 'scripts/controllers/main.js'],
+    searchPath: ['.tmp', 'templates']
+  });
+};
+
+Generator.prototype.createIndexHtml = function createIndexHtml() {
+  this.indexFile = this.indexFile.replace(/&apos;/g, "'");
+  this.write(path.join('templates', 'index.html'), this.indexFile);
+};
+
+Generator.prototype._injectDependencies = function _injectDependencies() {
+  wiredep({
+    directory: 'bower_components',
+    bowerJson: JSON.parse(fs.readFileSync('./bower.json')),
+    ignorePath: new RegExp('^(templates|..)/'),
+    src: 'app/templates/index.html',
+    fileTypes: {
+      html: {
+        replace: {
+          css: '<link rel="stylesheet" href="{{filePath}}">'
+        }
+      }
+    }
+  });
 };
