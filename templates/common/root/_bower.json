@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "devDependencies": {
     "angular": "^<%= ngVer %>",
-    "angular-route": "^<%= ngVer %>", <% if (animateModule) { %>
-    "angular-animate": "^<%= ngVer %>"<% } %><% if (ariaModule) { %>,
-    "angular-aria": "^<%= ngVer %>"<% } %><% if (cookiesModule) { %>,
-    "angular-cookies": "^<%= ngVer %>"<% } %><% if (messagesModule) { %>,
-    "angular-messages": "^<%= ngVer %>"<% } %><% if (resourceModule) { %>,
-    "angular-resource": "^<%= ngVer %>"<% } %><% if (sanitizeModule) { %>,
-    "angular-sanitize": "^<%= ngVer %>"<% } %><% if (touchModule) { %>,
-    "angular-touch": "^<%= ngVer %>"<% } %>,
+    "angular-route": "^<%= ngVer %>",<% if (animateModule) { %>
+    "angular-animate": "^<%= ngVer %>",<% } %><% if (ariaModule) { %>
+    "angular-aria": "^<%= ngVer %>",<% } %><% if (cookiesModule) { %>
+    "angular-cookies": "^<%= ngVer %>",<% } %><% if (messagesModule) { %>
+    "angular-messages": "^<%= ngVer %>",<% } %><% if (resourceModule) { %>
+    "angular-resource": "^<%= ngVer %>",<% } %><% if (sanitizeModule) { %>
+    "angular-sanitize": "^<%= ngVer %>",<% } %><% if (touchModule) { %>
+    "angular-touch": "^<%= ngVer %>",<% } %>
     "bootstrap": "~3.3.1",
     "ng-tasty": "~0.4.4"
   }
