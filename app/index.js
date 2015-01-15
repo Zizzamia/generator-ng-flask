@@ -155,6 +155,7 @@ Generator.prototype.packageFiles = function packageFiles() {
   this.template('root/_bowerrc', '.bowerrc');
   this.template('root/_editorconfig', '.editorconfig');
   this.template('root/_jshintrc', '.jshintrc');
+  this.template('root/gitignore', '.gitignore');
   this.template('root/_package.json', 'package.json');
   this.template('root/_gulpfile.js', 'gulpfile.js');
   this.template('root/LICENSE', 'LICENSE');

@@ -23,6 +23,7 @@ gulp.task('build', function () {
               'build-js');
 });
 
+
 gulp.task('build-css', function () {
   var date = new Date;
   var month = date.getMonth() + 1;
@@ -43,6 +44,38 @@ gulp.task('build-css', function () {
     // Output it to our dist folder
     .pipe(gulp.dest('static/dist/css'));
 });
+
+
+gulp.task('build-js-bower-components', function() {
+  var date = new Date;
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minutes = date.getMinutes();
+  var myVersionNumber = month + '-' + day + '-' + hour + '-' + minutes;
+
+  gulp.src(['static/bower_components/angular/angular.min.js',
+    'static/bower_components/angular-route/angular-route.min.js',<% if (animateModule) { %>
+    'static/bower_components/angular-animate/angular-animate.min.js', <% } %><% if (ariaModule) { %>,
+    'static/bower_components/angular-aria/angular-aria.min.js', <% } %><% if (cookiesModule) { %>,
+    'static/bower_components/angular-cookies/angular-cookies.min.js', <% } %><% if (messagesModule) { %>,
+    'static/bower_components/angular-messages/angular-messages.min.js', <% } %><% if (resourceModule) { %>,
+    'static/bower_components/angular-resource/angular-resource.min.js', <% } %><% if (sanitizeModule) { %>,
+    'static/bower_components/angular-sanitize/angular-sanitize.min.js', <% } %><% if (touchModule) { %>,
+    'static/bower_components/angular-touch/angular-touch.min.js', <% } %>,
+    'static/bower_components/ng-tasty/ng-tasty-tpls.min.js'])
+    .pipe(sourcemaps.init({loadMaps: true}))
+    // Bundle to a single file
+    .pipe(concat('components-v' + myVersionNumber + '.min.js'))
+    .pipe(sourcemaps.write('.'))
+    // Output it to our dist folder
+    .pipe(gulp.dest('static/dist/js'));
+
+  gulp.src(['templates/index.html'])
+    .pipe(replace(/bower-components-v[A-Z0-9.-]+?.min.js/, 'bower-components-v' + myVersionNumber + '.min.js'))
+    .pipe(gulp.dest('templates'));
+});
+
 
 gulp.task('build-js', function () {
   var date = new Date;
@@ -69,17 +102,32 @@ gulp.task('build-js', function () {
     .pipe(gulp.dest('templates'));
 });
 
+
+gulp.task('build-bower-components', function() {
+  gulp.run('clean-js-bower-components');
+  gulp.run('build-js-bower-components');
+});
+
+
 gulp.task('clean-css', function () {
   return del([
     'static/dist/css/<%= _.slugify(_.humanize(appname)) %>*'
   ]);
 });
 
+
+gulp.task('clean-js-bower-components', function () {
+  return gulp.src('static/dist/js/bower-components*', {read: false})
+    .pipe(clean())
+});
+
+
 gulp.task('clean-js', function () {
   return del([
     'static/dist/js/<%= _.slugify(_.humanize(appname)) %>*'
   ]);
 });
+
 
 gulp.task('html2js', function () {
   return gulp.src(['templates/components/*.html',
@@ -91,17 +139,20 @@ gulp.task('html2js', function () {
     .pipe(gulp.dest('static/dist/template'))
 });
 
+
 gulp.task('jshint', function () {
   return gulp.src('static/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
+
 gulp.task('sass', function () {
   return gulp.src('static/sass/style.scss')
     .pipe(sass())
     .pipe(gulp.dest('static/css'));
 });
+
 
 gulp.task('watch', function () {
   gulp.watch(['static/js/**/*.js', 'static/dist/template/*.js'], function () {

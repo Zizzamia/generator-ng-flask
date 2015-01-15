@@ -2,13 +2,19 @@
 ========================
 
 ## Quick start
-Just for running a new app let's follow these 4 steps.
+Just for running a new app let's follow these 5 steps.
 ```shell
 # Create your own environment from the new_app folder
 virtualenv venv && . venv/bin/activate
 
 # Install libraries
 pip install -r REQUIREMENTS.txt
+
+# Build bower js components files
+build-bower-components
+
+# Build js and css files
+gulp build
 
 # Run app 
 python app.py run

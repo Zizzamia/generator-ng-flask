@@ -11,11 +11,6 @@
   <link rel="stylesheet" href="/static/dist/css/<%= _.slugify(_.humanize(appname)) %>-v12-28.min.css">
 
   <base href="{{ url_root }}" />
-
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- endbuild -->
 </head>
 <body>
 
@@ -24,15 +19,8 @@
   <div class="container content" ng-view></div>
 
   <<%= _.slugify(_.humanize(appname)) %>-footer></<%= _.slugify(_.humanize(appname)) %>-footer>
-
-  <script src="/static/bower_components/angular/angular.min.js"></script>
-  <script src="/static/bower_components/angular-route/angular-route.min.js"></script>
-  <script src="/static/bower_components/ng-tasty/ng-tasty-tpls.min.js"></script>
+  
+  <script src="/static/dist/js/bower-components-v12-28.min.js"></script>
   <script src="/static/dist/js/<%= _.slugify(_.humanize(appname)) %>-v12-28.min.js"></script>
-
-  <!-- build:js(.) scripts/vendor.js -->
-  <!-- bower:js -->
-  <!-- endbower -->
-  <!-- endbuild -->
 </body>
 </html>
