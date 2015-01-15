@@ -200,16 +200,6 @@ Generator.prototype.packageTemplatesFiles = function packageFiles() {
   this.template('app/templates/pages/home.html', 'templates/pages/home.html');
 };
 
-Generator.prototype.appJs = function appJs() {
-  this.indexFile = this.appendFiles({
-    html: this.indexFile,
-    fileType: 'js',
-    optimizedPath: 'scripts/scripts.js',
-    sourceFileList: ['scripts/app.js', 'scripts/controllers/main.js'],
-    searchPath: ['.tmp', 'templates']
-  });
-};
-
 Generator.prototype.createIndexHtml = function createIndexHtml() {
   this.indexFile = this.indexFile.replace(/&apos;/g, "'");
   this.write(path.join('templates', 'index.html'), this.indexFile);

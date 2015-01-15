@@ -117,8 +117,9 @@ gulp.task('clean-css', function () {
 
 
 gulp.task('clean-js-bower-components', function () {
-  return gulp.src('static/dist/js/bower-components*', {read: false})
-    .pipe(clean())
+  return del([
+    'static/dist/js/bower-components*'
+  ]);
 });
 
 

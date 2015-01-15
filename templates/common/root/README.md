@@ -11,7 +11,7 @@ virtualenv venv && . venv/bin/activate
 pip install -r REQUIREMENTS.txt
 
 # Build bower js components files
-build-bower-components
+gulp build-bower-components
 
 # Build js and css files
 gulp build
