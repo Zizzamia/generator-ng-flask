@@ -56,17 +56,17 @@ gulp.task('build-js-bower-components', function() {
 
   gulp.src(['static/bower_components/angular/angular.min.js',
     'static/bower_components/angular-route/angular-route.min.js',<% if (animateModule) { %>
-    'static/bower_components/angular-animate/angular-animate.min.js', <% } %><% if (ariaModule) { %>,
-    'static/bower_components/angular-aria/angular-aria.min.js', <% } %><% if (cookiesModule) { %>,
-    'static/bower_components/angular-cookies/angular-cookies.min.js', <% } %><% if (messagesModule) { %>,
-    'static/bower_components/angular-messages/angular-messages.min.js', <% } %><% if (resourceModule) { %>,
-    'static/bower_components/angular-resource/angular-resource.min.js', <% } %><% if (sanitizeModule) { %>,
-    'static/bower_components/angular-sanitize/angular-sanitize.min.js', <% } %><% if (touchModule) { %>,
-    'static/bower_components/angular-touch/angular-touch.min.js', <% } %>,
+    'static/bower_components/angular-animate/angular-animate.min.js',<% } %><% if (ariaModule) { %>
+    'static/bower_components/angular-aria/angular-aria.min.js',<% } %><% if (cookiesModule) { %>
+    'static/bower_components/angular-cookies/angular-cookies.min.js',<% } %><% if (messagesModule) { %>
+    'static/bower_components/angular-messages/angular-messages.min.js',<% } %><% if (resourceModule) { %>
+    'static/bower_components/angular-resource/angular-resource.min.js',<% } %><% if (sanitizeModule) { %>
+    'static/bower_components/angular-sanitize/angular-sanitize.min.js',<% } %><% if (touchModule) { %>
+    'static/bower_components/angular-touch/angular-touch.min.js',<% } %>
     'static/bower_components/ng-tasty/ng-tasty-tpls.min.js'])
     .pipe(sourcemaps.init({loadMaps: true}))
     // Bundle to a single file
-    .pipe(concat('components-v' + myVersionNumber + '.min.js'))
+    .pipe(concat('bower-components-v' + myVersionNumber + '.min.js'))
     .pipe(sourcemaps.write('.'))
     // Output it to our dist folder
     .pipe(gulp.dest('static/dist/js'));

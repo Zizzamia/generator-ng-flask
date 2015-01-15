@@ -1,6 +1,6 @@
 {
   "name": "generator-ng-flask",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This generator is the scaffolding tool for generate by Yeoman a simple Flask app",
   "keywords": [
     "yeoman-generator",
